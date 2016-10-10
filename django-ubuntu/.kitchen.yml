@@ -1,0 +1,24 @@
+---
+driver:
+  name: vagrant
+
+provisioner:
+  name: chef_zero
+
+verifier:
+  name: inspec
+
+platforms:
+  - name: ubuntu/wily64
+
+suites:
+  - name: default
+    run_list:
+      - recipe[django-ubuntu::default]
+  - name: install_via_pip
+    run_list:
+      - recipe[django-ubuntu::install_via_pip]      
+    verifier:
+      inspec_tests:
+        - test/recipes
+    attributes:

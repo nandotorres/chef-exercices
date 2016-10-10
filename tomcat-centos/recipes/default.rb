@@ -31,6 +31,9 @@ execute 'chmod g+r /opt/tomcat/conf/*'
 
 template '/etc/systemd/system/tomcat.service' do 
   source 'tomcat.service.erb'
+  not_if do
+    File.exist?('/etc/systemd/system/tomcat.service')
+  end
 end
 
 execute 'systemctl daemon-reload'

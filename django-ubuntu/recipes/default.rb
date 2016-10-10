@@ -1,0 +1,1 @@
+include_recipe 'django-ubuntu::install_via_packages'
