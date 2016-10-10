@@ -1,0 +1,6 @@
+---
+hostname: 127.0.0.1
+port: '2222'
+username: vagrant
+ssh_key: "/home/fernando/devops/chef/tomcat/.kitchen/kitchen-vagrant/kitchen-tomcat-default-centos-71/.vagrant/machines/default/virtualbox/private_key"
+last_action: verify
